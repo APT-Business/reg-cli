@@ -1,13 +1,12 @@
 #!/bin/sh
-VERSION=$1
 DIR=report/ui
 
 if [ -e "$DIR" ]; then
   cd $DIR
   git fetch origin
-  git checkout refs/tags/$VERSION
+  git checkout master
 else
-  git clone https://github.com/APT-Business/reg-cli-report-ui.git -b $VERSION $DIR --depth 1
+  git clone https://github.com/APT-Business/reg-cli-report-ui.git $DIR --depth 1
   cd $DIR
 fi
 
